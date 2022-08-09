@@ -1,8 +1,14 @@
-import pandas as pd
+from math import floor
+listagem    = [10,50,12,43,98,45,61,75]
+Lista       = listagem.copy()
+tamanho = len(Lista)
+booleano    = tamanho % 2 == 0
+Lista.sort()
+meio    = int(tamanho/2)
+if booleano:
+    mediana = Lista[meio-1]
+else:
+    mediana = Lista[meio]
 
-tabela = pd.read_excel("webscraping/Produtos.xlsx")
-with pd.option_context('display.max_rows', None,
-                       'display.max_columns', None,
-                       'display.precision', 3,
-                       ):
-    print(tabela)
+print(Lista)
+print(mediana)
